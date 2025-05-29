@@ -1,7 +1,6 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { prisma } from "../lib/prisma";
 
-// Customers
 export async function customerRoutes(fastify: FastifyInstance) {
   fastify.get("/customers", async (request, reply) => {
     const customers = await prisma.customer.findMany();

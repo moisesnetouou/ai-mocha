@@ -6,8 +6,8 @@ import { messageRoutes } from './routes/message'
 const app = Fastify()
 
 app.register(cors)
-app.register(productRoutes, { prefix: '/products' })
-app.register(messageRoutes, { prefix: '/messages' })
+app.register(productRoutes)
+app.register(messageRoutes)
 
 app.listen({ port: 3333 }, () => {
   console.log('HTTP Server running on http://localhost:3333')

@@ -2,11 +2,11 @@ import { FastifyInstance } from 'fastify'
 import { prisma } from "../lib/prisma"
 
 export async function productRoutes(app: FastifyInstance) {
-  app.get('/', async () => {
+  app.get('/products', async () => {
     return await prisma.product.findMany()
   })
 
-  app.post('/', async (request, reply) => {
+  app.post('/product', async (request, reply) => {
     const { name, price, category } = request.body as {
       name: string
       price: number
